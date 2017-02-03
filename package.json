@@ -1,6 +1,6 @@
 {
   "name": "smart-table-search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "full text sarch factory (to perform on arrays)",
   "main": "dist/index.js",
   "jsnext:main": "index.js",
