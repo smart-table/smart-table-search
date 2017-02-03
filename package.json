@@ -1,0 +1,38 @@
+{
+  "name": "smart-table-search",
+  "version": "0.0.0",
+  "description": "full text sarch factory (to perform on arrays)",
+  "main": "dist/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build":"rollup -c rollup.config.js",
+    "build:test":"rollup -c test/rollup.config.js",
+    "test": "npm run build:test && node test/dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smart-table/smart-table-search.git"
+  },
+  "keywords": [
+    "smart-table",
+    "search",
+    "filter",
+    "array"
+  ],
+  "author": "Laurent Renard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smart-table/smart-table-search/issues"
+  },
+  "homepage": "https://github.com/smart-table/smart-table-search#readme",
+  "devDependencies": {
+    "rollup": "^0.41.4",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "zora": "^0.3.0"
+  },
+  "dependencies": {
+    "smart-table-json-pointer": "^1.0.1"
+  }
+}
