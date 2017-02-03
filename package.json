@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "full text sarch factory (to perform on arrays)",
   "main": "dist/index.js",
+  "jsnext:main": "index.js",
   "directories": {
     "test": "test"
   },
