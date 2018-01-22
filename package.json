@@ -1,6 +1,6 @@
 {
   "name": "smart-table-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "full text sarch factory (to perform on arrays)",
   "main": "dist/",
   "module": "dist/index.mjs",
