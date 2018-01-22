@@ -2,7 +2,7 @@ import search from '../index';
 import zora from 'zora';
 
 export default zora()
-  .test('full text search on all values (flat object)', function * (t) {
+  .test('full text search on all values (flat object)', t => {
     const collection = [
       {a: 'woo', b: 'foot'},
       {a: 'foo', b: 'w'},
@@ -14,7 +14,7 @@ export default zora()
       {a: 'foo', b: 'w'}
     ]);
   })
-  .test('full text search on all values (nested object)', function * (t) {
+  .test('full text search on all values (nested object)', t => {
     const collection = [
       {a: 'woo', b: {c: 'foot'}},
       {a: 'foo', b: {c: 'w'}},
@@ -26,7 +26,7 @@ export default zora()
       {"a": "foo", "b": {"c": "w"}}
     ]);
   })
-  .test('full text search: do nothing when no scope is provided', function * (t) {
+  .test('full text search: do nothing when no scope is provided', t => {
     const collection = [
       {a: 'woo', b: 'foot'},
       {a: 'foo', b: 'w'},
@@ -35,7 +35,7 @@ export default zora()
     const output = search({value: 'w'})(collection);
     t.deepEqual(output, collection);
   })
-  .test('full text search: do nothing when no value is provided', function * (t) {
+  .test('full text search: do nothing when no value is provided', t => {
     const collection = [
       {a: 'woo', b: 'foot'},
       {a: 'foo', b: 'w'},

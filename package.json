@@ -2,15 +2,15 @@
   "name": "smart-table-search",
   "version": "1.0.1",
   "description": "full text sarch factory (to perform on arrays)",
-  "main": "dist/index.js",
+  "main": "dist/",
+  "module": "dist/index.mjs",
   "jsnext:main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "build:test": "rollup -c test/rollup.config.js",
-    "test": "npm run build:test && node test/dist/index.js"
+    "build": "rollup -c rollup/build.js && rollup -c rollup/cdn.js",
+    "test": "xo ./index.js && rollup -c test/rollup.config.js | node | tap-diff"
   },
   "repository": {
     "type": "git",
@@ -29,11 +29,14 @@
   },
   "homepage": "https://github.com/smart-table/smart-table-search#readme",
   "devDependencies": {
-    "rollup": "^0.41.4",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "zora": "^0.3.0"
+    "rollup": "^0.54.1",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "tap-diff": "^0.1.1",
+    "xo": "^0.18.2",
+    "zora": "^1.1.6"
   },
   "dependencies": {
-    "smart-table-json-pointer": "^1.0.1"
+    "smart-table-json-pointer": "^1.0.2"
   }
 }

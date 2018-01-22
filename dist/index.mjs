@@ -1,8 +1,4 @@
-'use strict';
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var pointer = _interopDefault(require('smart-table-json-pointer'));
+import pointer from 'smart-table-json-pointer';
 
 function index (searchConf = {}) {
   const {value, scope = []} = searchConf;
@@ -14,4 +10,4 @@ function index (searchConf = {}) {
   }
 }
 
-module.exports = index;
+export default index;
