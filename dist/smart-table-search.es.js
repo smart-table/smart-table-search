@@ -1,6 +1,3 @@
-var smartTableSearch = (function () {
-'use strict';
-
 function pointer(path) {
 
 	const parts = path.split('.');
@@ -42,7 +39,5 @@ function index (searchConf = {}) {
 	return array => array.filter(item => searchPointers.some(p => String(p(item)).includes(String(value))));
 }
 
-return index;
-
-}());
-//# sourceMappingURL=smart-table-search.js.map
+export default index;
+//# sourceMappingURL=smart-table-search.es.js.map
