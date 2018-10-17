@@ -1,13 +1,13 @@
-import pointer from 'smart-table-json-pointer';
-import {SearchInput, SearchFunction} from './interfaces';
+import {pointer} from 'smart-table-json-pointer';
+import {SearchConfiguration, SearchFunction} from './interfaces';
 
-interface BasicSearchInput extends SearchInput {
+interface BasicSearchInput extends SearchConfiguration {
     isCaseSensitive?: boolean;
 }
 
 export const basic = <T>(input: BasicSearchInput): SearchFunction<T> => {
     const {value, scope = [], isCaseSensitive = false} = input;
-    const searchPointers = scope.map(field => pointer(field).get);
+    const searchPointers = scope.map(field => pointer<T>(field).get);
     if (scope.length === 0 || !value) {
         return (array: T[]): T[] => array;
     }

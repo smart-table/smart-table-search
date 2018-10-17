@@ -1,4 +1,4 @@
-export interface SearchInput {
+export interface SearchConfiguration {
     value: string;
     scope: string[];
 }
