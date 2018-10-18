@@ -1,7 +1,7 @@
 import {pointer} from 'smart-table-json-pointer';
 import {SearchConfiguration, SearchFunction} from './interfaces';
 
-interface BasicSearchInput extends SearchConfiguration {
+export interface BasicSearchInput extends SearchConfiguration {
     isCaseSensitive?: boolean;
 }
 

@@ -2,7 +2,7 @@ import {pointer} from 'smart-table-json-pointer';
 import {SearchConfiguration, SearchFunction} from './interfaces';
 import {re} from 're-template-tag';
 
-interface RegexSearchInput extends SearchConfiguration {
+export interface RegexSearchInput extends SearchConfiguration {
     escape?: boolean;
     flags?: string;
 }
