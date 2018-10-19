@@ -1,9 +1,9 @@
 {
   "name": "smart-table-search",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "full text sarch factory (to perform on arrays)",
   "main": "./dist/bundle/index",
-  "module": "./dist/src/index.js",
+  "module": "./dist/bundle/module.js",
   "types": "./dist/declarations/index.d.ts",
   "directories": {
     "test": "test"
@@ -14,7 +14,7 @@
     "build:clean": "rm -rf ./dist && mkdir -p ./dist/bundle && cp -r ./src ./dist/src",
     "build:compile": "tsc",
     "build:bundle": "rollup -c ./rollup/build.js && rollup -c ./rollup/cdn.js",
-    "build": "npm run build:clean && npm run build:compile && npm run build:bundle"
+    "build": "npm run build:clean && npm run build:compile && npm run build:bundle && rm -rf ./dist/src"
   },
   "repository": {
     "type": "git",
@@ -45,6 +45,6 @@
   },
   "dependencies": {
     "re-template-tag": "^2.0.1",
-    "smart-table-json-pointer": "^2.0.3"
+    "smart-table-json-pointer": "^2.0.4"
   }
 }

@@ -1,5 +1,5 @@
 import test from 'zora';
-import {regexp as search} from '../dist/src/regex';
+import {regexp as search} from '../dist/bundle/module.js';
 
 test('regexp text search on all values (flat object)', t => {
   const collection = [

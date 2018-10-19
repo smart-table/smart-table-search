@@ -1,5 +1,5 @@
 import test from 'zora';
-import {basic as search} from '../dist/src/basic';
+import {basic as search} from '../dist/bundle/module';
 
 test('basic text search on all values (flat object)', t => {
   const collection = [
