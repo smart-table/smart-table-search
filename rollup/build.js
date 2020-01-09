@@ -12,6 +12,7 @@ export default {
         file: './dist/bundle/module.js',
         format: 'es'
     }],
+    external: ['smart-table-json-pointer'],
     plugins: [
         node({
             only: ['re-template-tag']
