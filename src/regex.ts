@@ -14,5 +14,9 @@ export const regexp = <T>(input: RegexSearchInput): SearchFunction<T> => {
         return (array: T[]): T[] => array;
     }
     const regex = escape === true ? re`/${value}/${flags}` : new RegExp(value, flags);
-    return (array: T[]): T[] => array.filter(item => searchPointers.some(p => regex.test(String(p(item)))));
+    return (array: T[]): T[] => array.filter(item => searchPointers.some(p => {
+        let v = p(item);
+        v = Array.isArray(v) ? v : [v];
+        return v.some(e => regex.test(String(e)));
+    }));
 };

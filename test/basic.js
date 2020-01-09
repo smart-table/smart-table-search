@@ -27,6 +27,18 @@ test('basic text search on all values (nested object)', t => {
     ]);
 });
 
+test('basic text search on all arrays', t => {
+    const collection = [
+        {a: 'woo', b: ['foot', 'koot']},
+        {a: 'foo', b: ['w', 'x']},
+        {a: 'foo', b: ['b', 'c']},
+    ];
+    t.deepEqual(search({value: ',', scope: ['a', 'b']})(collection), []);
+    t.deepEqual(search({value: 'x', scope: ['a', 'b']})(collection), [
+        {a: 'foo', b: ['w', 'x']},
+    ]);
+});
+
 test('basic text search: do nothing when no scope is provided', t => {
     const collection = [
         {a: 'woo', b: 'foot'},
