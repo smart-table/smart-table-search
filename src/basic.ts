@@ -12,12 +12,15 @@ export const basic = <T>(input: BasicSearchInput): SearchFunction<T> => {
         return (array: T[]): T[] => array;
     }
     const test = isCaseSensitive === true ? String(value) : String(value).toLowerCase();
+    const testFn = e => {
+        const str = isCaseSensitive === true ? String(e) : String(e).toLowerCase();
+        return str.includes(test);
+    };
     return (array: T[]): T[] => array.filter(item => searchPointers.some(p => {
-        let v = p(item);
-        v = Array.isArray(v) ? v : [v];
-        return v.some(e => {
-            const str = isCaseSensitive === true ? String(e) : String(e).toLowerCase();
-            return str.includes(test);
-        })
+        const v = p(item);
+        if (Array.isArray(v)) {
+            return v.some(testFn);
+        }
+        return testFn(v);
     }));
 };
